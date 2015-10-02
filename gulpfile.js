@@ -18,7 +18,7 @@ gulp.task('sass', function(done) {
     .pipe(sass({
       errLogToConsole: true
     }))
-    .pipe(gulp.dest('./www/css/'))
+    // .pipe(gulp.dest('./www/css/')) // don't add unminified css to dist
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
