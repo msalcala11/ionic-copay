@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.bitpay.wallet" version="0.0.1" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns="http://www.w3.org/ns/widgets">
-  <name>Copay</name>
+  <name>V2</name>
   <description>
     The secure, shared bitcoin wallet.
   </description>
-  <author email="satoshi@bitpay" href="http://copay.io/">
-    Copay Team
+  <author email="satoshi@bitpay" href="http://bitpay.com/">
+    BitPay
   </author>
   <content src="index.html"/>
   <access origin="*"/>
