@@ -11,7 +11,7 @@ angular.module('copayApp')
             },
             function(dirEntry) {
                 dirEntry.getFile(
-                    "test.png",
+                    "jquery.js",
                     {
                         create: true,
                         exclusive: false
@@ -21,7 +21,8 @@ angular.module('copayApp')
                         fe.remove();
                         ft = new FileTransfer();
                         ft.download(
-                            encodeURI("https://bitpay.com/images/bitcoin.19154c52.svg"),
+                            //encodeURI("https://bitpay.com/images/bitcoin.19154c52.svg"),
+                            encodeURI("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"),
                             p,
                             function(entry) {
                                 console.log('entry', entry);
@@ -82,16 +83,29 @@ angular.module('copayApp')
               },
               function(dirEntry) {
                   dirEntry.getFile(
-                      "test.png",
+                      "jquery.js",
                       {
                           create: false,
                           exclusive: false
                       },
                       function gotFileEntry(fe) {
+                          console.log('loaded file', fe);
+                          console.log('loaded file.toString()', fe.toString());
                           //$ionicLoading.hide();
                           $scope.imgFile = fe.toURL();
                           console.log('loaded file: ', $scope.imgFile);
                           filePath = $scope.imgFile;
+
+                          fe.file(function(file) {
+                            var reader = new FileReader();
+
+                            reader.onloadend = function(e) {
+                              console.log("Text is: "+this.result);
+                              // document.querySelector("#textArea").innerHTML = this.result;
+                            }
+
+                            reader.readAsText(file);
+                          });
                       },
                       function(error) {
                           //$ionicLoading.hide();
@@ -118,7 +132,7 @@ angular.module('copayApp')
               },
               function(dirEntry) {
                   dirEntry.getFile(
-                      "test.png",
+                      "jquery.js",
                       {
                           create: false,
                           exclusive: false
