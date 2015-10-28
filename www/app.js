@@ -1,4 +1,4 @@
-angular.module('copayApp', ['ionic'])
+angular.module('copayApp', ['ionic', 'ngCordova', 'ngIOS9UIWebViewPatch'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

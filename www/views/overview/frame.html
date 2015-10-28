@@ -1,0 +1,12 @@
+<div>Dood</div>
+<!-- will not load due to sandboxing -->
+<script src="/lib/ionic/js/ionic.bundle.min.js"></script>
+
+<script>
+  console.log('running frame script')
+  window.marty = "yooooo";
+  setTimeout(function(){
+    console.log('running code');
+    //parent.postMessage("runThis", "*");
+  },10000);
+</script>
