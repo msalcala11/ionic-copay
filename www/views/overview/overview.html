@@ -12,5 +12,13 @@
     <button class="button button-full button-assertive" ng-click="deleteFile()">
       Delete File
     </button>
+    <br>
+    <label class="item item-input">
+      <span class="input-label">Src</span>
+      <input type="text" ng-model="src">
+    </label>
+    <button class="button button-full button-energized" ng-click="appendScriptTag(src)">
+      Append Script Tag
+    </button>
   </ion-content>
 </ion-view>

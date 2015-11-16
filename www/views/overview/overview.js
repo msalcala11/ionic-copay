@@ -1,6 +1,12 @@
 angular.module('copayApp')
   .controller('OverviewCtrl', function($scope, $cordovaFileTransfer, $cordovaFile) {
     // With Ionic view caching, controllers are only run on app start
+    $scope.appendScriptTag = function (src){
+      var tag = document.createElement('script');
+      tag.src = src || 'lib/ionic/js/ionic.bundle.min.js';
+      document.body.appendChild(tag);
+    }
+
     $scope.downloadFile = function() {
       console.log('$scope.downloadFile called');
       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
