@@ -1,5 +1,4 @@
 var AndroidManifest = require('androidmanifest');
-var manifestFilePath = root+'/platforms/android/AndroidManifest.xml'
 
 var FILEPATH = 'platforms/android/AndroidManifest.xml';
 var manifest = new AndroidManifest().readFile(FILEPATH);
