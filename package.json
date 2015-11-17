@@ -1,8 +1,8 @@
 {
-  "name": "copay",
+  "name": "V2",
   "version": "1.0.0",
   "main": "main.js",
-  "description": "Copay: An Ionic project",
+  "description": "V2",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^1.3.3",
@@ -25,6 +25,7 @@
   ],
   "cordovaPlatforms": [
     "ios",
+    "android",
     {
       "platform": "android",
       "locator": "windows"

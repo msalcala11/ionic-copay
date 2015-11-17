@@ -1,4 +1,4 @@
-angular.module('copayApp', ['ionic'])
+angular.module('app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
