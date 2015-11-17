@@ -3,13 +3,13 @@ var AndroidManifest = require('androidmanifest');
 var FILEPATH = 'platforms/android/AndroidManifest.xml';
 var manifest = new AndroidManifest().readFile(FILEPATH);
 
-var MainActivity = manifest.activity('MainActivity');
+var mainActivity = manifest.activity('MainActivity');
 
 var customUrls = ['copay', 'bitcoin', 'bitauth'];
 
 customUrls.forEach(function(url){
   var selector = 'intent-filter > data[android\\:scheme=' + url + ']';
-  if(MainActivity.find(selector).length > 0){
+  if(mainActivity.find(selector).length > 0){
     return;
   }
 
@@ -18,7 +18,7 @@ customUrls.forEach(function(url){
   intentFilter.append('<action android:name="android.intent.action.VIEW" />');
   intentFilter.append('<category android:name="android.intent.category.DEFAULT" />');
   intentFilter.append('<category android:name="android.intent.category.BROWSABLE" />');
-  MainActivity.append(intentFilter);
+  mainActivity.append(intentFilter);
 });
 
 manifest.writeFile(FILEPATH);
