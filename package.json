@@ -1,6 +1,7 @@
 {
   "name": "V2",
   "version": "1.0.0",
+  "main": "main.js",
   "description": "V2",
   "dependencies": {
     "androidmanifest": "^2.0.0",
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "bower": "^1.3.3",
+    "electron-prebuilt": "^0.34.1",
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0"
   },
@@ -25,6 +27,10 @@
   ],
   "cordovaPlatforms": [
     "android",
-    "ios"
+    "ios",
+    {
+      "platform": "windows",
+      "locator": "windows"
+    }
   ]
 }
